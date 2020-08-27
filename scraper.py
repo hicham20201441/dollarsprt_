@@ -2,7 +2,8 @@
 # including some code snippets below that you should find helpful
 
 import scraperwiki
-import lxml.html
+#import lxml.html
+form bs4 import BeautifulSoup as bs
 #
 s="""https://dollarsprout.com/make-money-college/
 https://dollarsprout.com/buying-an-engagement-ring/
@@ -522,8 +523,8 @@ https://dollarsprout.com/terms-of-use/
 for e in s.split():
   try:
     html = scraperwiki.scrape(e)
-    root = lxml.html.fromstring(html)
-    j=root.cssselect("div[class='blog-col']")
+    root = bs.BeuatifulSoup(html)
+    j=root.find_all('div',attrs={'class':'blog-col'})
     print(j)
     for u in j:
       scraperwiki.sqlite.save(unique_keys=['link'], data={"link": e, "html": u.decode('utf-8')})
