@@ -3,7 +3,7 @@
 
 import scraperwiki
 #import lxml.html
-form bs4 import BeautifulSoup as bs
+import BeautifulSoup as bs
 #
 s="""https://dollarsprout.com/make-money-college/
 https://dollarsprout.com/buying-an-engagement-ring/
